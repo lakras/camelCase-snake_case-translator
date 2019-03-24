@@ -9,8 +9,7 @@ translateCamelToSnake = function()
 	startTranslation();
 	
 	// translates camelCase to snake_case
-	var output = input;
- 	output = output.replace(/([a-z])([A-Z])/g, "$1" + "_" + "$2");
+	var output = input.replace(/([a-z])([A-Z])/g, "$1" + "_" + "$2");
 	output = output.replace(/[a-z]_([A-Z])/g, function($0,$1) {return $0.replace($1, $1.toLowerCase());})
 	
 	endTranslation(output);
@@ -24,8 +23,7 @@ translateSnakeToCamel = function()
 	startTranslation();
 	
 	// translates snake_case to camelCase
-	var output = input;
-	output = output.replace(/\w_(\w)/g, function($0,$1) {return $0.replace($1, $1.toUpperCase());})
+	var output = input.replace(/\w_(\w)/g, function($0,$1) {return $0.replace($1, $1.toUpperCase());})
 	output = output.replace(/(\w)_(\w)/g, "$1" + "$2");
 	
 	endTranslation(output);
@@ -33,19 +31,11 @@ translateSnakeToCamel = function()
 
 upperCase = function(value)
 {
-// 	return "S";
-	if(value == 'c')
-		return 'C';
-	value = value + "s";
 	return value.toUpperCase();
 }
 
 lowerCase = function(value)
 {
-// 	return "s";
-	if(value == 'C')
-		return 'c';
-	value = value + "s";
 	return value.toLowerCase();
 }
 
